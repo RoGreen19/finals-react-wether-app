@@ -2,7 +2,6 @@ import React from "react";
 import WeatherComponent from "./WeatherComponent";
 import "./App.css";
 import "./WeatherComponent.css";
-import "./cloudy.png";
 
 function App() {
   return (

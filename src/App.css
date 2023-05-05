@@ -17,11 +17,3 @@ body {
     #0a1a19
   );
 }
-
-.App .main-weather-picture {
-  position: absolute;
-  width: 235px;
-  top: 54px;
-  right: 217px;
-  filter: drop-shadow(2px 2px 10px rgb(128, 123, 123));
-}

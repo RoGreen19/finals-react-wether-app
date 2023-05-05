@@ -1,5 +1,11 @@
 import React from "react";
 import "./WeatherComponent.css";
+import cloudy from "./cloudy.png";
+import cut2 from "./cut2.jpg";
+import rainy from "./rainy.png";
+import rainythunder from "./rainythunder.png";
+import snowy from "./snowy.png";
+import thnderstorm from "./thnderstorm.png";
 
 export default function WeatherComponent() {
   return (
@@ -7,7 +13,7 @@ export default function WeatherComponent() {
       <div className="card first">
         <div className="card-header">Weather</div>
         <div className="card text-bg-dark">
-          <img src="./cut2.jpg" className="card-img" alt="" />
+          <img src={cut2} className="card-img" alt="" />
           <div className="card-img-overlay">
             <h3>Kyiv</h3>
             <h6 className="date">25.11.2022</h6>
@@ -28,7 +34,7 @@ export default function WeatherComponent() {
             <button className="fahrenheit-button">°F</button>
             <img
               className="main-weather-picture"
-              src="./rainy.png"
+              src={rainy}
               alt="weatherPicture"
             />
             <h1>13°</h1>
@@ -62,7 +68,7 @@ export default function WeatherComponent() {
               <h5>24.11</h5>
               <samp className="week-date">Mon</samp>
               <br />
-              <img src="./cloudy.png" className="week-weather-icon" alt="" />
+              <img src={cloudy} className="week-weather-icon" alt="" />
               <br />
               -12°С
             </div>
@@ -70,23 +76,14 @@ export default function WeatherComponent() {
               <h5>25.11</h5>
               <samp className="week-date">Tues</samp>
               <br />
-              <img
-                src="./rainy.png"
-                className="week-weather-icon"
-                alt=""
-              />{" "}
-              <br />
+              <img src={rainy} className="week-weather-icon" alt="" /> <br />
               -12°С
             </div>
             <div className="col">
               <h5>26.11</h5>
               <samp className="week-date">Wed</samp>
               <br />
-              <img
-                src="./rainythunder.png"
-                className="week-weather-icon"
-                alt=""
-              />
+              <img src={rainythunder} className="week-weather-icon" alt="" />
               <br />
               +12°С
             </div>
@@ -94,11 +91,7 @@ export default function WeatherComponent() {
               <h5>27.11</h5>
               <samp className="week-date">Thurs</samp>
               <br />
-              <img
-                src="./thnderstorm.png"
-                className="week-weather-icon"
-                alt=""
-              />
+              <img src={thnderstorm} className="week-weather-icon" alt="" />
               <br />
               +12°С
             </div>
@@ -106,12 +99,7 @@ export default function WeatherComponent() {
               <h5>28.11</h5>
               <samp className="week-date">Fri</samp>
               <br />
-              <img
-                src="./snowy.png"
-                className="week-weather-icon"
-                alt=""
-              />{" "}
-              <br />
+              <img src={snowy} className="week-weather-icon" alt="" /> <br />
               +14°С
             </div>
           </div>
