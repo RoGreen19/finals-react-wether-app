@@ -28,7 +28,7 @@ export default function WeatherComponent() {
             <img
               className="main-weather-picture"
               src="./rainy.png"
-              alt="weather picture"
+              alt="weatherPicture"
             />
             <h1>13°</h1>
 
