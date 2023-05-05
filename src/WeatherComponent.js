@@ -7,8 +7,9 @@ import rainy from "./rainy.png";
 import rainythunder from "./rainythunder.png";
 import snowy from "./snowy.png";
 import thnderstorm from "./thnderstorm.png";
+import { InfinitySpin } from "react-loader-spinner";
 
-export default function WeatherComponent() {
+export default function WeatherComponent(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponce(response) {
     setWeatherData({
@@ -136,10 +137,9 @@ export default function WeatherComponent() {
     );
   } else {
     const apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
-    let city = "Kyiv";
-    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${props.defaulyCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponce);
 
-    return "Loading...";
+    return <InfinitySpin width="1000" color="#9f63c7" />;
   }
 }
