@@ -14,9 +14,13 @@ export default function WeatherComponent() {
   function handleResponce(response) {
     setWeatherData({
       temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      visibility: response.data.visibility,
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
     });
     setReady(true);
-    console.log(response.data.main.temp);
+    console.log(response.data.weather[0].description);
   }
 
   if (ready) {
@@ -30,7 +34,9 @@ export default function WeatherComponent() {
               <h3>Kyiv</h3>
               <h6 className="date">25.11.2022</h6>
               <h6 className="time">23.13</h6>
-              <h6 className="current-precipitation">Cloudy</h6>
+              <h6 className="current-precipitation text-capitalize">
+                {weatherData.description}
+              </h6>
               <form id="city-input">
                 <input
                   className="search-line"
@@ -59,15 +65,19 @@ export default function WeatherComponent() {
                 <div className="row">
                   <div className="col weather-humidity">
                     <p>Humidity</p>
-                    <h4 className="humidity">100 %</h4>
+                    <h4 className="humidity">{weatherData.humidity} %</h4>
                   </div>
                   <div className="col weather-visibility">
                     <p>Visibility</p>
-                    <h4 className="visibility">7.2 km</h4>
+                    <h4 className="visibility">
+                      {weatherData.visibility / 1000} km
+                    </h4>
                   </div>
                   <div className="col weather-wind">
                     <p>Wind</p>
-                    <h4 className="wind">10 km/h</h4>
+                    <h4 className="wind">
+                      {Math.round(weatherData.wind)} km/h
+                    </h4>
                   </div>
                 </div>
               </div>
