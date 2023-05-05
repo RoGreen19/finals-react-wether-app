@@ -74,7 +74,7 @@
   filter: drop-shadow(2px 2px 10px rgb(128, 123, 123));
 }
 
-h1 {
+.App h1 {
   position: absolute;
   margin: 0 auto;
   display: block;
@@ -82,8 +82,8 @@ h1 {
   right: 125px;
   font-size: 143px;
   color: #9f63c7;
-  text-shadow: 0App 0.04em 0 rgb(0, 0, 0), -0App 0.04em 0 #000,
-    0 0App 0.04em #000, 0 -0App 0.04em #000;
+  text-shadow: 0.04em 0 rgb(0, 0, 0), -0.04em 0 #000, 0 0.04em #000,
+    0 -0.04em #000;
 }
 
 .App .change-value-of-t {
@@ -98,7 +98,7 @@ h1 {
   padding: 0;
 }
 
-h3 {
+.App h3 {
   height: 50px;
   color: #b28ae3;
   display: block;
@@ -109,7 +109,7 @@ h3 {
     0 -0App 0.04em #000;
 }
 
-h6 {
+.App h6 {
   width: 75px;
   height: 25px;
   text-align: left;
@@ -191,7 +191,7 @@ h6 {
   color: #1a2740;
 }
 
-h5,
+.App h5,
 .App .weather-humidity,
 .App .weather-visibility,
 .App .weather-wind {
@@ -199,7 +199,7 @@ h5,
     rgba(0, 0, 0, 0App 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0App 0.2) 0px -3px 0px inset;
 }
-h4 {
+.App h4 {
   margin-bottom: 0;
 }
 
@@ -208,7 +208,7 @@ h4 {
   line-height: 1App 0.8;
   padding: 20px;
 }
-h5 {
+.App h5 {
   margin: 0 auto;
   color: #1a2740;
   width: 80%;
@@ -218,7 +218,7 @@ h5 {
   transition: all 170ms ease-in-out;
 }
 
-h5:hover {
+.App h5:hover {
   background-color: #b28ae3;
 }
 

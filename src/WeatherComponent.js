@@ -16,10 +16,11 @@ export default function WeatherComponent() {
       temperature: response.data.main.temp,
     });
     setReady(true);
+    console.log(response.data.main.temp);
   }
 
   if (ready) {
-    https: return (
+    return (
       <div className="WeatherComponent">
         <div className="card first">
           <div className="card-header">Weather</div>
@@ -52,7 +53,7 @@ export default function WeatherComponent() {
                 src={rainy}
                 alt="weatherPicture"
               />
-              <h1>{weatherData.temperature}</h1>
+              <h1>{Math.round(weatherData.temperature)}°С</h1>
 
               <div className="card-footer">
                 <div className="row">
@@ -125,7 +126,7 @@ export default function WeatherComponent() {
   } else {
     const apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
     let city = "Kyiv";
-    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q={city name}&appid=${apiKey}&units=metric`;
+    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponce);
 
     return "Loading...";
