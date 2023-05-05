@@ -19,6 +19,7 @@ export default function WeatherComponent() {
                 type="search"
                 placeholder="Search"
                 id="search-new-city"
+                autoFocus="on"
               />
               <input className="search-button" type="Submit" placeholder="🔍" />
             </form>

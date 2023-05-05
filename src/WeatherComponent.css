@@ -1,0 +1,233 @@
+.App {
+  margin: 50px 0;
+}
+
+.App .card-img {
+  opacity: 30%;
+}
+.App .first,
+.App .second {
+  background-color: #02080f;
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  border: none;
+  box-shadow: rgb(240 46 170 / 40%) 0px 0px 0px 5px,
+    rgb(240 46 170 / 30%) 5px 4px, rgb(240 46 170 / 20%) 10px 10px,
+    rgb(240 46 170 / 10%) 15px 15px, rgb(240 46 170 / 5%) 20px 20px;
+}
+
+.App .first {
+  position: relative;
+}
+.App .card-header {
+  font-size: 14px;
+  background-color: #141e2c;
+  color: #fff;
+}
+
+.App .current-city-button,
+.App .celsius-button,
+.App .fahrenheit-button {
+  border-radius: 4px;
+  text-align: left;
+  position: absolute;
+  top: 45px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0px 3px;
+  box-shadow: 1px 1px 0px 0px #ad2681, 2px 2px 0px 0px #ad2681,
+    3px 3px 0px 0px #ad2681;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.App .current-city-button {
+  right: 110px;
+}
+
+.App .celsius-button {
+  right: 69px;
+}
+
+.App .fahrenheit-button {
+  right: 30px;
+}
+
+.App .current-city-button:hover,
+.App .celsius-button:hover,
+.App .fahrenheit-button:hover {
+  box-shadow: 1px 1px 0px 0px #ccad00, 2px 2px 0px 0px #ff8400,
+    3px 3px 0px 0px #ad2681;
+}
+
+.App .main-weather-picture {
+  position: absolute;
+  width: 235px;
+  top: 54px;
+  right: 217px;
+  filter: drop-shadow(2px 2px 10px rgb(128, 123, 123));
+}
+
+h1 {
+  position: absolute;
+  margin: 0 auto;
+  display: block;
+  top: 149px;
+  right: 125px;
+  font-size: 143px;
+  color: #9f63c7;
+  text-shadow: 0App 0.04em 0 rgb(0, 0, 0), -0App 0.04em 0 #000,
+    0 0App 0.04em #000, 0 -0App 0.04em #000;
+}
+
+.App .change-value-of-t {
+  top: 94px;
+  right: 100px;
+  font-size: 67px;
+  color: #ff8400;
+  text-shadow: 0App 0.04em 0 rgb(0, 0, 0), -0App 0.04em 0 #000,
+    0 0App 0.04em #000, 0 -0App 0.04em #000;
+  background: fixed;
+  border: 0;
+  padding: 0;
+}
+
+h3 {
+  height: 50px;
+  color: #b28ae3;
+  display: block;
+  text-align: left;
+  margin: 3px 12px 8px;
+  font-size: 52px;
+  text-shadow: 0App 0.04em 0 rgb(0 0 0), -0App 0.04em 0 #000, 0 0App 0.04em #000,
+    0 -0App 0.04em #000;
+}
+
+h6 {
+  width: 75px;
+  height: 25px;
+  text-align: left;
+  margin: 12px 22px 15px;
+  color: #b28ae3;
+  position: absolute;
+  top: 65px;
+  left: 6px;
+  text-shadow: 0App 0.04em 0 rgb(0 0 0), -0App 0.04em 0 #000, 0 0App 0.04em #000,
+    0 -0App 0.04em #000;
+}
+
+.App .date {
+  width: 97px;
+  position: absolute;
+  top: 71px;
+}
+.App .time {
+  width: 80px;
+  position: absolute;
+  top: 71px;
+  left: 93px;
+}
+
+.App .current-precipitation {
+  position: absolute;
+  top: 98px;
+  left: 6px;
+}
+.App .search-line {
+  border-radius: 59px;
+  text-align: left;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  box-shadow: rgba(0, 0, 0, 0App 0.15) 0px 3px 3px 0px;
+}
+
+.App .search-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border-radius: 59px;
+  background-color: #b28ae3;
+}
+
+.App .card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: none;
+  border-top: none;
+}
+
+.App .weather-humidity,
+.App .weather-visibility,
+.App .weather-wind {
+  display: block;
+  text-align: center;
+  margin: 10px 24px;
+  padding: 24px 9px 19px;
+  border-radius: 30px;
+  line-height: 0App 0.1;
+  box-shadow: rgba(0, 0, 0, 0App 0.15) 0px 3px 3px 0px;
+}
+
+.App .weather-humidity {
+  background: #27364e;
+}
+
+.App .weather-visibility {
+  background: #b28ae3;
+  color: #1a2740;
+}
+
+.App .weather-wind {
+  background: #cbd6ff;
+  color: #1a2740;
+}
+
+h5,
+.App .weather-humidity,
+.App .weather-visibility,
+.App .weather-wind {
+  box-shadow: rgba(0, 0, 0, 0App 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0App 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0App 0.2) 0px -3px 0px inset;
+}
+h4 {
+  margin-bottom: 0;
+}
+
+.App .week-temperature {
+  text-align: center;
+  line-height: 1App 0.8;
+  padding: 20px;
+}
+h5 {
+  margin: 0 auto;
+  color: #1a2740;
+  width: 80%;
+  border-radius: 59px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0App 0.15) 0px 3px 3px 0px;
+  transition: all 170ms ease-in-out;
+}
+
+h5:hover {
+  background-color: #b28ae3;
+}
+
+.App .week-date {
+  font-family: "Josefin Sans", sans-serif;
+  color: #ff8400;
+}
+
+.App .week-weather-icon {
+  width: 68px;
+  filter: drop-shadow(2px 2px 29px rgb(128, 123, 123));
+}
