@@ -27,8 +27,8 @@
 }
 
 .App .current-city-button,
-.App .celsius-button,
-.App .fahrenheit-button {
+.celsius-button,
+.fahrenheit-button {
   border-radius: 4px;
   text-align: left;
   position: absolute;
@@ -91,8 +91,8 @@
   right: 100px;
   font-size: 67px;
   color: #ff8400;
-  text-shadow: 0App 0.04em 0 rgb(0, 0, 0), -0App 0.04em 0 #000,
-    0 0App 0.04em #000, 0 -0App 0.04em #000;
+  text-shadow: 0.04em 0 rgb(0, 0, 0), -0.04em 0 #000, 0 0.04em #000,
+    0 -0.04em #000;
   background: fixed;
   border: 0;
   padding: 0;
@@ -105,8 +105,8 @@
   text-align: left;
   margin: 3px 12px 8px;
   font-size: 52px;
-  text-shadow: 0App 0.04em 0 rgb(0 0 0), -0App 0.04em 0 #000, 0 0App 0.04em #000,
-    0 -0App 0.04em #000;
+  text-shadow: 0.04em 0 rgb(0 0 0), -0.04em 0 #000, 0 0.04em #000,
+    0 -0.04em #000;
 }
 
 .App h6 {
@@ -118,8 +118,8 @@
   position: absolute;
   top: 65px;
   left: 6px;
-  text-shadow: 0App 0.04em 0 rgb(0 0 0), -0App 0.04em 0 #000, 0 0App 0.04em #000,
-    0 -0App 0.04em #000;
+  text-shadow: 0.04em 0 rgb(0 0 0), -0.04em 0 #000, 0 0.04em #000,
+    0 -0.04em #000;
 }
 
 .App .date {
@@ -173,8 +173,8 @@
   margin: 10px 24px;
   padding: 24px 9px 19px;
   border-radius: 30px;
-  line-height: 0App 0.1;
-  box-shadow: rgba(0, 0, 0, 0App 0.15) 0px 3px 3px 0px;
+  line-height: 0.1;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 .App .weather-humidity {
@@ -195,9 +195,8 @@
 .App .weather-humidity,
 .App .weather-visibility,
 .App .weather-wind {
-  box-shadow: rgba(0, 0, 0, 0App 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0App 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0App 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .App h4 {
   margin-bottom: 0;
@@ -205,7 +204,7 @@
 
 .App .week-temperature {
   text-align: center;
-  line-height: 1App 0.8;
+  line-height: 1.8;
   padding: 20px;
 }
 .App h5 {
@@ -214,7 +213,7 @@
   width: 80%;
   border-radius: 59px;
   background: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0App 0.15) 0px 3px 3px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   transition: all 170ms ease-in-out;
 }
 
