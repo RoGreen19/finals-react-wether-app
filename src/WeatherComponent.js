@@ -9,21 +9,22 @@ import snowy from "./snowy.png";
 import thnderstorm from "./thnderstorm.png";
 
 export default function WeatherComponent() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponce(response) {
     setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       visibility: response.data.visibility,
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
+      date: "05.05.2023",
+      time: "23.13",
     });
-    setReady(true);
     console.log(response.data.weather[0].description);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="WeatherComponent">
         <div className="card first">
@@ -32,8 +33,8 @@ export default function WeatherComponent() {
             <img src={cut2} className="card-img" alt="" />
             <div className="card-img-overlay">
               <h3>Kyiv</h3>
-              <h6 className="date">25.11.2022</h6>
-              <h6 className="time">23.13</h6>
+              <h6 className="date">{weatherData.date}</h6>
+              <h6 className="time">{weatherData.time}</h6>
               <h6 className="current-precipitation text-capitalize">
                 {weatherData.description}
               </h6>
