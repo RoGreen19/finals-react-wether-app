@@ -7,7 +7,7 @@ export default function WeatherComponent() {
       <div class="card first">
         <div class="card-header">Weather</div>
         <div class="card text-bg-dark">
-          <img src="src/cut2.jpg" class="card-img" alt="..." />
+          <img src="./cut2.jpg" class="card-img" alt="..." />
           <div class="card-img-overlay">
             <h3>Kyiv</h3>
             <h6 class="date">25.11.2022</h6>
@@ -27,7 +27,7 @@ export default function WeatherComponent() {
             <button class="fahrenheit-button">°F</button>
             <img
               class="main-weather-picture"
-              src="src/rainy.png"
+              src="./rainy.png"
               alt="weather picture"
             />
             <h1>13°</h1>
@@ -61,7 +61,7 @@ export default function WeatherComponent() {
               <h5>24.11</h5>
               <samp class="week-date">Mon</samp>
               <br />
-              <img src="src/cloudy.png" class="week-weather-icon" />
+              <img src="./cloudy.png" class="week-weather-icon" />
               <br />
               -12°С
             </div>
@@ -69,14 +69,14 @@ export default function WeatherComponent() {
               <h5>25.11</h5>
               <samp class="week-date">Tues</samp>
               <br />
-              <img src="src/rainy.png" class="week-weather-icon" /> <br />
+              <img src="./rainy.png" class="week-weather-icon" /> <br />
               -12°С
             </div>
             <div class="col">
               <h5>26.11</h5>
               <samp class="week-date">Wed</samp>
               <br />
-              <img src="src/rainythunder.png" class="week-weather-icon" />
+              <img src="./rainythunder.png" class="week-weather-icon" />
               <br />
               +12°С
             </div>
@@ -84,7 +84,7 @@ export default function WeatherComponent() {
               <h5>27.11</h5>
               <samp class="week-date">Thurs</samp>
               <br />
-              <img src="src/thnderstorm.png" class="week-weather-icon" />
+              <img src="./thnderstorm.png" class="week-weather-icon" />
               <br />
               +12°С
             </div>
@@ -92,7 +92,7 @@ export default function WeatherComponent() {
               <h5>28.11</h5>
               <samp class="week-date">Fri</samp>
               <br />
-              <img src="src/snowy.png" class="week-weather-icon" /> <br />
+              <img src="./snowy.png" class="week-weather-icon" /> <br />
               +14°С
             </div>
           </div>
