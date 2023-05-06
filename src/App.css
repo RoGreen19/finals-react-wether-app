@@ -19,3 +19,10 @@ body {
     #0a1a19
   );
 }
+
+.open-source-code {
+  color: #ff8400;
+  font-size: 17px;
+  line-height: 4;
+  text-align: center;
+}

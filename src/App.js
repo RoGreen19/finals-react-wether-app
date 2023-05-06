@@ -9,6 +9,16 @@ function App() {
       <div className="container">
         <WeatherComponent defaulyCity="Kyiv" />
       </div>
+      <p className="open-source-code">
+        <a
+          href="https://github.com/RoGreen19/finals-react-wether-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open-source code
+        </a>{" "}
+        by Sofiia Telychko
+      </p>
     </div>
   );
 }
