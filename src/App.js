@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <WeatherComponent defaulyCity="Kyiv" />
+        <WeatherComponent defaultCity="Kyiv" />
       </div>
       <p className="open-source-code">
         <a

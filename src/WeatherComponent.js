@@ -10,6 +10,7 @@ import thnderstorm from "./thnderstorm.png";
 import { InfinitySpin } from "react-loader-spinner";
 import FormatedDate from "./FormatedDate";
 import FormatedTime from "./FormatedTime";
+import SearchEngine from "./SearchEngine";
 
 export default function WeatherComponent(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -34,6 +35,7 @@ export default function WeatherComponent(props) {
           <div className="card text-bg-dark">
             <img src={cut2} className="card-img" alt="" />
             <div className="card-img-overlay">
+              <SearchEngine />
               <h3>Kyiv</h3>
               <h6 className="date">
                 <FormatedDate date={weatherData.date} />
@@ -44,20 +46,7 @@ export default function WeatherComponent(props) {
               <h6 className="current-precipitation text-capitalize">
                 {weatherData.description}
               </h6>
-              <form id="city-input">
-                <input
-                  className="search-line"
-                  type="search"
-                  placeholder="Search"
-                  id="search-new-city"
-                  autoFocus="on"
-                />
-                <input
-                  className="search-button"
-                  type="Submit"
-                  placeholder="🔍"
-                />
-              </form>
+
               <button className="current-city-button">Current</button>
               <button className="celsius-button">°C</button>
               <button className="fahrenheit-button">°F</button>
@@ -139,8 +128,8 @@ export default function WeatherComponent(props) {
       </div>
     );
   } else {
-    const apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
-    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${props.defaulyCity}&appid=${apiKey}&units=metric`;
+    const apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
+    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${props.newCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponce);
 
     return <InfinitySpin width="50%" color="#9f63c7" />;
