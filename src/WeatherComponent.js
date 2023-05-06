@@ -61,7 +61,7 @@ export default function WeatherComponent(props) {
                 src={rainy}
                 alt="weatherPicture"
               />
-              <h1>{Math.round(weatherData.temperature)}°С</h1>
+              <h1>{Math.round(weatherData.temperature)}°</h1>
 
               <div className="card-footer">
                 <div className="row">
@@ -140,6 +140,6 @@ export default function WeatherComponent(props) {
     let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${props.defaulyCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponce);
 
-    return <InfinitySpin width="1000" color="#9f63c7" />;
+    return <InfinitySpin width="50%" color="#9f63c7" />;
   }
 }
