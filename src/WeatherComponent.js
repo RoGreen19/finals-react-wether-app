@@ -10,7 +10,7 @@ import thnderstorm from "./thnderstorm.png";
 import { InfinitySpin } from "react-loader-spinner";
 import FormatedDate from "./FormatedDate";
 import FormatedTime from "./FormatedTime";
-//import SearchEngine from "./SearchEngine";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherComponent(props) {
   const [newCity, setNewCity] = useState(props.defaultCity);
@@ -80,6 +80,7 @@ export default function WeatherComponent(props) {
               </h6>
 
               <button className="current-city-button">Current</button>
+              <WeatherTemperature />
               <button className="celsius-button">°C</button>
               <button className="fahrenheit-button">°F</button>
               <img
