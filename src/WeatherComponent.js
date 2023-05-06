@@ -8,6 +8,8 @@ import rainythunder from "./rainythunder.png";
 import snowy from "./snowy.png";
 import thnderstorm from "./thnderstorm.png";
 import { InfinitySpin } from "react-loader-spinner";
+import FormatedDate from "./FormatedDate";
+import FormatedTime from "./FormatedTime";
 
 export default function WeatherComponent(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -16,13 +18,12 @@ export default function WeatherComponent(props) {
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      visibility: response.data.visibility,
+      visibility: response.data.visibility / 1000,
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
-      date: "05.05.2023",
-      time: "23.13",
+      date: new Date(response.data.dt * 1000),
+      time: new Date(response.data.dt),
     });
-    console.log(response.data.weather[0].description);
   }
 
   if (weatherData.ready) {
@@ -34,8 +35,12 @@ export default function WeatherComponent(props) {
             <img src={cut2} className="card-img" alt="" />
             <div className="card-img-overlay">
               <h3>Kyiv</h3>
-              <h6 className="date">{weatherData.date}</h6>
-              <h6 className="time">{weatherData.time}</h6>
+              <h6 className="date">
+                <FormatedDate date={weatherData.date} />
+              </h6>
+              <h6 className="time">
+                <FormatedTime time={weatherData.time} />
+              </h6>
               <h6 className="current-precipitation text-capitalize">
                 {weatherData.description}
               </h6>
@@ -71,9 +76,7 @@ export default function WeatherComponent(props) {
                   </div>
                   <div className="col weather-visibility">
                     <p>Visibility</p>
-                    <h4 className="visibility">
-                      {weatherData.visibility / 1000} km
-                    </h4>
+                    <h4 className="visibility">{weatherData.visibility} km</h4>
                   </div>
                   <div className="col weather-wind">
                     <p>Wind</p>
