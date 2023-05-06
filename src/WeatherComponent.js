@@ -10,9 +10,10 @@ import thnderstorm from "./thnderstorm.png";
 import { InfinitySpin } from "react-loader-spinner";
 import FormatedDate from "./FormatedDate";
 import FormatedTime from "./FormatedTime";
-import SearchEngine from "./SearchEngine";
+//import SearchEngine from "./SearchEngine";
 
 export default function WeatherComponent(props) {
+  const [newCity, setNewCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponce(response) {
     setWeatherData({
@@ -27,6 +28,21 @@ export default function WeatherComponent(props) {
     });
   }
 
+  function search() {
+    const apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
+    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponce);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(newCity);
+  }
+
+  function handleCityChange(event) {
+    setNewCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="WeatherComponent">
@@ -35,8 +51,24 @@ export default function WeatherComponent(props) {
           <div className="card text-bg-dark">
             <img src={cut2} className="card-img" alt="" />
             <div className="card-img-overlay">
-              <SearchEngine />
-              <h3>Kyiv</h3>
+              <div className="searchEngine">
+                <form id="city-input" onSubmit={handleSubmit}>
+                  <input
+                    className="search-line"
+                    type="search"
+                    placeholder="Search"
+                    id="search-new-city"
+                    onChange={handleCityChange}
+                  />
+                  <input
+                    className="search-button"
+                    type="Submit"
+                    placeholder="🔍"
+                    onChange={handleCityChange}
+                  />
+                </form>
+              </div>
+              <h3>{newCity}</h3>
               <h6 className="date">
                 <FormatedDate date={weatherData.date} />
               </h6>
@@ -128,9 +160,7 @@ export default function WeatherComponent(props) {
       </div>
     );
   } else {
-    const apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
-    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${props.newCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponce);
+    search();
 
     return <InfinitySpin width="50%" color="#9f63c7" />;
   }
