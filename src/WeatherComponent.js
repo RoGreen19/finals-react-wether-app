@@ -22,7 +22,7 @@ export default function WeatherComponent(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      time: new Date(response.data.dt),
+      time: new Date(response.data.dt * 1000),
     });
   }
 
