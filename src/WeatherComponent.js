@@ -25,6 +25,7 @@ export default function WeatherComponent(props) {
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       time: new Date(response.data.dt * 1000),
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
@@ -82,7 +83,7 @@ export default function WeatherComponent(props) {
               <button className="current-city-button">Current</button>
               <img
                 className="main-weather-picture"
-                src={rainy}
+                src={weatherData.iconUrl}
                 alt="weatherPicture"
               />
               <WeatherTemperature celsius={weatherData.temperature} />
