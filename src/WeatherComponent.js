@@ -80,15 +80,12 @@ export default function WeatherComponent(props) {
               </h6>
 
               <button className="current-city-button">Current</button>
-              <WeatherTemperature />
-              <button className="celsius-button">°C</button>
-              <button className="fahrenheit-button">°F</button>
               <img
                 className="main-weather-picture"
                 src={rainy}
                 alt="weatherPicture"
               />
-              <h1>{Math.round(weatherData.temperature)}°</h1>
+              <WeatherTemperature celsius={weatherData.temperature} />
 
               <div className="card-footer">
                 <div className="row">
