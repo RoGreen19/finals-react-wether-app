@@ -4,8 +4,19 @@ import rainythunder from "./rainythunder.png";
 import snowy from "./snowy.png";
 import cloudy from "./cloudy.png";
 import thnderstorm from "./thnderstorm.png";
+import axios, { Axios } from "axios";
 
 export default function WeatherForecast() {
+  function handleResponce(response) {
+    console.log(response.data);
+  }
+
+  let latitude = 40.7;
+  let longitude = 74;
+  let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+  Axios.length(apiUrl).then(handleResponse);
   return (
     <div className="weathertForecast">
       <div className="card-header">Week temperature</div>
