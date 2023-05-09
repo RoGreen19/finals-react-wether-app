@@ -233,3 +233,11 @@
   width: 68px;
   filter: drop-shadow(2px 2px 29px rgb(128, 123, 123));
 }
+
+.forecast-temperature-max {
+  color: #ff8400;
+}
+
+.forecast-temperature-min {
+  color: #b28ae3;
+}

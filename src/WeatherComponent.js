@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import "./WeatherComponent.css";
 import axios from "axios";
-import cloudy from "./cloudy.png";
 import cut2 from "./cut2.jpg";
-import rainy from "./rainy.png";
-import rainythunder from "./rainythunder.png";
-import snowy from "./snowy.png";
-import thnderstorm from "./thnderstorm.png";
 import { InfinitySpin } from "react-loader-spinner";
 import FormatedDate from "./FormatedDate";
 import FormatedTime from "./FormatedTime";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherComponent(props) {
   const [newCity, setNewCity] = useState(props.defaultCity);
@@ -112,49 +108,7 @@ export default function WeatherComponent(props) {
 
         <br />
         <div className="card second">
-          <div className="card-header">Week temperature</div>
-          <div className="container week-temperature">
-            <div className="row">
-              <div className="col">
-                <h5>24.11</h5>
-                <samp className="week-date">Mon</samp>
-                <br />
-                <img src={cloudy} className="week-weather-icon" alt="" />
-                <br />
-                -12°С
-              </div>
-              <div className="col">
-                <h5>25.11</h5>
-                <samp className="week-date">Tues</samp>
-                <br />
-                <img src={rainy} className="week-weather-icon" alt="" /> <br />
-                -12°С
-              </div>
-              <div className="col">
-                <h5>26.11</h5>
-                <samp className="week-date">Wed</samp>
-                <br />
-                <img src={rainythunder} className="week-weather-icon" alt="" />
-                <br />
-                +12°С
-              </div>
-              <div className="col">
-                <h5>27.11</h5>
-                <samp className="week-date">Thurs</samp>
-                <br />
-                <img src={thnderstorm} className="week-weather-icon" alt="" />
-                <br />
-                +12°С
-              </div>
-              <div className="col">
-                <h5>28.11</h5>
-                <samp className="week-date">Fri</samp>
-                <br />
-                <img src={snowy} className="week-weather-icon" alt="" /> <br />
-                +14°С
-              </div>
-            </div>
-          </div>
+          <WeatherForecast />
         </div>
       </div>
     );
