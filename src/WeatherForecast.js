@@ -16,7 +16,7 @@ export default function WeatherForecast() {
   let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
-  Axios.length(apiUrl).then(handleResponse);
+  Axios.get(apiUrl).then(handleResponse);
   return (
     <div className="weathertForecast">
       <div className="card-header">Week temperature</div>
