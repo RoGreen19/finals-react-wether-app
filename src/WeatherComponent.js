@@ -14,6 +14,7 @@ export default function WeatherComponent(props) {
   function handleResponce(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       visibility: response.data.visibility / 1000,
@@ -26,7 +27,7 @@ export default function WeatherComponent(props) {
   }
 
   function search() {
-    const apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
+    const apiKey = "616b14cbd38253313b3b8852fa77335d";
     let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponce);
   }
@@ -107,9 +108,7 @@ export default function WeatherComponent(props) {
         </div>
 
         <br />
-        <div className="card second">
-          <WeatherForecast />
-        </div>
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
