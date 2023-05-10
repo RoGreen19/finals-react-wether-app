@@ -9,7 +9,7 @@ import WeatherTemperature from "./WeatherTemperature";
 import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherComponent(props) {
-  const [newCity, setNewCity] = useState(props.defaultCity);
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponce(response) {
     setWeatherData({
@@ -22,23 +22,24 @@ export default function WeatherComponent(props) {
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       time: new Date(response.data.dt * 1000),
+      city: response.data.name,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
   function search() {
     const apiKey = "616b14cbd38253313b3b8852fa77335d";
-    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
+    let apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponce);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    search(newCity);
+    search(city);
   }
 
   function handleCityChange(event) {
-    setNewCity(event.target.value);
+    setCity(event.target.value);
   }
 
   if (weatherData.ready) {
@@ -66,7 +67,7 @@ export default function WeatherComponent(props) {
                   />
                 </form>
               </div>
-              <h3>{newCity}</h3>
+              <h3>{weatherData.city}</h3>
               <h6 className="date">
                 <FormatedDate date={weatherData.date} />
               </h6>
