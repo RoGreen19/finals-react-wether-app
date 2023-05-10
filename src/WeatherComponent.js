@@ -94,7 +94,9 @@ export default function WeatherComponent(props) {
                   </div>
                   <div className="col weather-visibility">
                     <p>Visibility</p>
-                    <h4 className="visibility">{weatherData.visibility} km</h4>
+                    <h4 className="visibility">
+                      {Math.round(weatherData.visibility)} km
+                    </h4>
                   </div>
                   <div className="col weather-wind">
                     <p>Wind</p>

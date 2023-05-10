@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import rainy from "./rainy.png";
-import rainythunder from "./rainythunder.png";
-import snowy from "./snowy.png";
-import thnderstorm from "./thnderstorm.png";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
@@ -22,43 +18,17 @@ export default function WeatherForecast(props) {
           <div className="card-header">Week temperature</div>
           <div className="container week-temperature">
             <div className="row">
-              <div className="col">
-                <WeatherForecastDay data={forecast[0]} />
-              </div>
-              <div className="col">
-                <h5>25.11</h5>
-                <samp className="week-date">Tues</samp>
-                <br />
-                <img src={rainy} className="week-weather-icon" alt="" /> <br />
-                <span className="forecast-temperature-max">-12°/</span>
-                <span className="forecast-temperature-min">-12°</span>
-              </div>
-              <div className="col">
-                <h5>26.11</h5>
-                <samp className="week-date">Wed</samp>
-                <br />
-                <img src={rainythunder} className="week-weather-icon" alt="" />
-                <br />
-                <span className="forecast-temperature-max">-12°/</span>
-                <span className="forecast-temperature-min">-12°</span>
-              </div>
-              <div className="col">
-                <h5>27.11</h5>
-                <samp className="week-date">Thurs</samp>
-                <br />
-                <img src={thnderstorm} className="week-weather-icon" alt="" />
-                <br />
-                <span className="forecast-temperature-max">-12°/</span>
-                <span className="forecast-temperature-min">-12°</span>
-              </div>
-              <div className="col">
-                <h5>28.11</h5>
-                <samp className="week-date">Fri</samp>
-                <br />
-                <img src={snowy} className="week-weather-icon" alt="" /> <br />
-                <span className="forecast-temperature-max">-12°/</span>
-                <span className="forecast-temperature-min">-12°</span>
-              </div>
+              {forecast.map(function (dailyForecast, index) {
+                if (index < 5) {
+                  return (
+                    <div className="col" key={index}>
+                      <WeatherForecastDay data={dailyForecast} />
+                    </div>
+                  );
+                } else {
+                  return "";
+                }
+              })}
             </div>
           </div>
         </div>
