@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import rainy from "./rainy.png";
 import rainythunder from "./rainythunder.png";
 import snowy from "./snowy.png";
-import cloudy from "./cloudy.png";
 import thnderstorm from "./thnderstorm.png";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
@@ -23,17 +23,7 @@ export default function WeatherForecast(props) {
           <div className="container week-temperature">
             <div className="row">
               <div className="col">
-                <h5>24.11</h5>
-                <samp className="week-date">Mon</samp>
-                <br />
-                <img src={cloudy} className="week-weather-icon" alt="" />
-                <br />
-                <span className="forecast-temperature-max">
-                  {Math.round(forecast[0].temp.max)}°/
-                </span>
-                <span className="forecast-temperature-min">
-                  {Math.round(forecast[0].temp.min)}°
-                </span>
+                <WeatherForecastDay data={forecast[0]} />
               </div>
               <div className="col">
                 <h5>25.11</h5>
